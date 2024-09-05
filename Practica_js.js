@@ -372,4 +372,28 @@ class Perro extends Animal{//asi recibe los elementos por herencia
         super (nombre,tipo);//llama al constructor de la clase animal y adentro definimos quie atributos de la clase padre se van a usar
         this.raza =raza
     }
+    emitirSonido()
+    {
+        console.log('El perro ladra')
+    }
+    correr()
+    {
+        console.log(`${this.nombre} corre alregremente`)
+    }
 }
+const perro = new Perro('Bobby','Mascota','Golden')
+perro.emitirSonido()
+perro.correr()
+console.log(perro);
+
+// uso de oprototipos
+perro.NuevoMetodo = function()//aqui se esta agregando un nuevo metodo SOLO A LA INSTANCIA  NO A LA CLASE
+{
+    console.log('Este es un nuevo metodo');
+    
+}
+Perro.prototype.segundoMetodo = function(){//AQUI LE AGREGAMOS PROTOTYPO a la clase junto al nuevo metodo
+    console.log('Este es el segundo metodo');
+}
+perro.segundoMetodo()//aqui se agrego exitosamente el nuevo metodo a travez del prototypo
+//this
