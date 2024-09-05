@@ -396,4 +396,14 @@ Perro.prototype.segundoMetodo = function(){//AQUI LE AGREGAMOS PROTOTYPO a la cl
     console.log('Este es el segundo metodo');
 }
 perro.segundoMetodo()//aqui se agrego exitosamente el nuevo metodo a travez del prototypo
-//this
+
+
+//RED SOCIAL
+/*
+1.- EL USUARIO DEBE TENER USUARIO Y CONTRASENIA
+2.-EL SISTEMA DEBE SER CAPAZ DE VALIDAR SI EL USUARIO Y CONTRASENIA EXISTEN
+3,- sI SON CORRECTOS LOS DATOS SE DEBE INGRESAR UN MENSAJE DE BIEN
+
+
+
+*/
