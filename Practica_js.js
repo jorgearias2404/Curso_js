@@ -77,7 +77,44 @@ let estaCasado = false;
  const b=20
  const c="10"
 
- a==b
+ //estructura de control switch
+//   switch(expresion)
+//   {
+//    case Valor1:
+//     //codigo a ejecurar en caso de expresion sea igual a 
+//     //valor1
+//     break;
+//    case Valor2:
+//      //codigo a ejecutar
+//    break;
+//    default:
+
+//    //codigo default
+//    break;
+//   }
+let Expresion = "Papaya"
+switch(Expresion)
+{
+    case "Naranja":
+   console.log("Las naranjas cuestan 20");
+    break;
+    case "Aguacate":
+        console.log("Las Aguacates cuestan 20");
+         break;
+ 
+ case "Peras":
+   console.log("Las Peras cuestan 20");
+    break;
+
+ case "Papaya":
+    console.log("Conseguiste la papaya");
+     break;
+     default:
+        console.log("No hay frutas disponibles");
+        break;
+}
+
+
 //null
 let estaCasado2 = null;
 //undefind
@@ -100,5 +137,83 @@ let frutas = ["manzana","peras","uvas"];
 //function
 function saludar(){}
 
+//CICLOS
+//for
+//  for(variable;condicion;incremento){
+//   sucede el codigo
+//  }
 
- 
+// for of (se puede con arrays o strings)
+// for (variable of objeto)
+// {
+//     sucede codigo
+// }
+// let arreglo;
+//  for(elemento_del_arreglo of arreglo)
+//  {
+//     console.log(elemento_del_arreglo);
+//  }
+
+
+//for in (sirve para iterar sobre objetos)
+
+// for(variable in objeto)
+// {
+
+// }
+//esto se lee que por cada propiedad del OBJETO 
+//  se ejecuta el codigo dentro del for in
+
+
+//while
+//while(condicion)
+// {
+//     sucede el codigo
+// }
+
+//do while
+//do{
+//  sucede el codigo
+// }while(condicion)
+
+
+//ANATOMIA DE UNA FUNCION 
+
+// function suma (a , b)
+// {
+//   return a+b;
+
+// }
+// console.log(suma(7,3));
+
+//un metodo es una funcion que pertenece a un objeto 
+
+//funciones puras e impuras
+
+//funcion pura dada una misma entrada obtenemos una misma salida
+
+//ARROW FUNCTION Y LEXICAL BINDING
+const saludo =function(name)
+{
+    return `Hi, ${name}`
+}
+//arrow function
+const Newsaludo = (name) => `Hi, ${name}`
+
+//lexical binding
+const user = {
+    name: 'Juan'
+    , edad: 25
+    , saludo: function(mensaje)
+    {
+        console.log(`Hola soy, ${user.name}, y el mensaje para decirte es: ${mensaje}`) 
+    }
+} 
+
+user.saludo("Hola soy pepito")
+
+//scope chain contextos de ejecucion
+//      scopre  hosting  reasignable? Redeclarable?
+// var  funcion   si         si            si
+//let   bloque    no         si            no
+//const bloque    no         no            no
