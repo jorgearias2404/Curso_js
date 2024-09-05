@@ -210,10 +210,166 @@ const user = {
     }
 } 
 
-user.saludo("Hola soy pepito")
+user.saludo("Tengo hambre")
 
 //scope chain contextos de ejecucion
 //      scopre  hosting  reasignable? Redeclarable?
 // var  funcion   si         si            si
 //let   bloque    no         si            no
 //const bloque    no         no            no
+
+//conceptos de array
+
+
+  //arreglo vacio
+ const EmprtyArray = []  
+
+ //arreglo con el =numero cuatro adentro
+ const array = [4]
+
+
+
+ //accediendo a arrays
+ const canasta = ['Apple', 'Banana', 'Orange']
+ console.log(canasta[0]) //Apple
+ console.log(canasta[1]) //Banana
+ console.log(canasta[2]) //Orange
+ //MUTABILITY
+ canasta.push('Calabaza')//ingresa un nuevo elemento al arreglo
+ canasta.pop()//saca el ultimo elemento del arreglo y si se desea se guarda
+ //INMUTABILITY
+ const NEWfRUITS = canasta.concat(['uvas','kiwi'])//concatenamos un arreglo
+ //cheking arrays
+ const Arr = Array.isArray(canasta)
+ //map y for each
+ //map opera a todos los elementos del arreglo y puede almacenar el resultado de la operacion
+ const number=[2,3,4,5,]
+ const doubleNumber = number.map(num => num*2)
+ console.log(number)
+ console.log(doubleNumber)
+
+ //for each opera a todos los elementos del areweglo sin almacenarlos
+ const colors=['red','pink','blue']
+ const iterateColors =colors.forEach(color=>console.log(color))
+
+ console.log(colors)
+ console.log(iterateColors)
+
+ //FILTER Y REDUCE
+ //filter
+ const numbers = [1, 2, 3, 4, 5, 6]
+ const evenNumbers = numbers.filter(num => num % 2 === 0)
+ console.log(numbers)
+ console.log(evenNumbers)
+
+ //REDUCE
+const Numbersreduce =[1,2,3,4,5,]
+const sumNumbers = Numbersreduce.reduce((accumalator,current)=>accumalator+current, 0)
+console.log(Numbersreduce)
+console.log(sumNumbers)
+
+//ejemplo 2
+const words = ['palabra1','palabra2','palabra3','palabra1']
+const wordsFrequency = words.reduce((accumalator,current) => 
+{
+  if(accumalator[current])
+  {
+    accumalator[current]++
+  }
+  else
+  {
+    accumalator[current]=1
+  }
+  return accumalator
+},{} )
+console.log(words)
+console.log(wordsFrequency)
+
+
+//FIND findindex()
+//find retorna el rpimer elemento que cumpla la condicion
+const firstNumberGreaterThan10 =[5,10,15,2,3]
+const firstNumberGreaterThan10find = firstNumberGreaterThan10.find(num => num > 10)
+console.log(firstNumberGreaterThan10)
+console.log(firstNumberGreaterThan10find)
+
+//find index nos devuelve el indice del elemento que satisfaga la condicion
+const RandomNumber =[6,10,11,20,23,70]
+const indexRandom = RandomNumber.findIndex(num=> num>=70)
+
+console.log(RandomNumber);
+console.log(indexRandom);
+
+//SLICE
+//slice devuelve un nuevo arreglo con los elementos del arreglo original es decir los copias
+const animals = ['ant,','snake', 'camel','elephant','lion']
+console.log(animals.slice(1,2))
+console.log(animals.slice(2,5))
+console.log(animals.slice(-2))
+
+//spreed operator
+// copiando un arreglo
+const arregloOriginal = [1,2,3,4,5]
+const arregloCopia = [...arregloOriginal]
+const arreglo1 = [1,2,3,4]
+const arreglo2 = [5,6,7,8]
+const combinacion = [...arreglo1,...arreglo2]
+console.log(combinacion);
+
+console.log(arregloOriginal)
+console.log(arregloCopia)
+
+
+//ANATOMIA DE UN OBJETO
+
+//CONSTRUCTOR
+
+    
+
+ function Persona (nombre,apellido,edad){
+  this.nombre=nombre
+  this.apellido=apellido
+  this.edad=edad
+ }
+ //HACIENDO USO DE INSTANCIAS
+ const persona1 = new Persona('Pepito','Perez',25)
+ console.log(persona1)
+ const persona2 = new Persona('Alfonso','Gutierrez',50)
+ console.log(persona2)
+
+ //CLASES
+ class ClasePersona{
+ 
+    constructor(Nombre,Edad) //debe ser siempre minuscula
+    {
+       this.nombre =Nombre
+       this.edad = Edad
+    }
+    saludar()
+    {
+        console.log(`Hola, mi nombre es ${this.nombre} y tengo ${this.edad}`);
+        
+    }
+ 
+};
+ 
+const Juan = new ClasePersona("Juan",23);
+Juan.saludar();
+
+//OBJETOS, HERENCIAS Y PROTOTIPOS
+class Animal{
+    constructor(nombre,tipo){
+        this.nombre = nombre;
+        this.tipo = tipo;
+    }
+    emitirSonido()
+    {
+        console.log('El animal emite un sonido')
+    }
+}
+class Perro extends Animal{//asi recibe los elementos por herencia
+    constructor(nombre,tipo,raza){
+        super (nombre,tipo);//llama al constructor de la clase animal y adentro definimos quie atributos de la clase padre se van a usar
+        this.raza =raza
+    }
+}
