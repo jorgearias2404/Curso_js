@@ -397,13 +397,41 @@ Perro.prototype.segundoMetodo = function(){//AQUI LE AGREGAMOS PROTOTYPO a la cl
 }
 perro.segundoMetodo()//aqui se agrego exitosamente el nuevo metodo a travez del prototypo
 
+// promesas
+//Promise{
+    //ESTADOS
+//     pending;//promesa prendiente
+//     fullfilled;//promesa se resuelve
+//     rejected;//promesa se rechaza
+    //CALLBACKS
+//     resolve//se resuelve de manera satisfactoria
+//     reject//no se puedo resolver
+    //CATCH
+    //     catch//captura el error
+//}
 
-//RED SOCIAL
-/*
-1.- EL USUARIO DEBE TENER USUARIO Y CONTRASENIA
-2.-EL SISTEMA DEBE SER CAPAZ DE VALIDAR SI EL USUARIO Y CONTRASENIA EXISTEN
-3,- sI SON CORRECTOS LOS DATOS SE DEBE INGRESAR UN MENSAJE DE BIEN
+const promise = new Promise((resolve,reject) => {
 
+    setTimeout (() => {
+let operattionSuccesfull = true;
+if(operattionSuccesfull)
+{
+  resolve('La operacion fue exitosa')
+}
+else{
+    reject('La operacion no fue exitosa')
+}
 
+    } ,2000)
+})
 
-*/
+promise.then((succesMessage) =>//funcionara esto en caso de que la operacion sea exitosa y recivira lo que mande el resolve
+     {
+    console.log(succesMessage);
+})
+promise.catch((errorMessage)=>//funcionara esto en caso de que la operacion sea rechazada y recibira el reject
+{
+    console.log(errorMessage)
+})
+
+//async and await
